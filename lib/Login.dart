@@ -50,7 +50,18 @@ class _LoginState extends State<Login> {
               Controller: Email,
               Label: 'E-mail',
               icon: Icons.email,
-              keyboard: TextInputType.phone,
+              keyboard: TextInputType.emailAddress,
+              valdaitor: (String? Value){
+if(                Value!.isEmpty){
+  return "Empty";
+
+}
+if (!Value.contains("@")) {
+  return "email is False";
+}
+
+return null;
+              },
             ),
             SizedBox(
               height: 10,
